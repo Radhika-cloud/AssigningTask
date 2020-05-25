@@ -1,6 +1,6 @@
-def CONTAINER_NAME="docker-pipeline-demo"
+def CONTAINER_NAME="docker_201"
 def CONTAINER_TAG="latest"
-def DOCKER_HUB_USER="thesuyashgupta"
+def DOCKER_HUB_USER="radhika060"
 def HTTP_PORT="8090"
 
 node {
@@ -67,8 +67,7 @@ def pushToImage(containerName, tag, dockerUser, dockerPassword){
 }
 
 def runApp(containerName, tag, dockerHubUser, httpPort){
-    //sh "sudo docker pull $dockerHubUser/$containerName"
-    //sh "sudo docker run -d --rm -p 8888:8080 --name $containerName $dockerHubUser/$containerName:$tag"
+    
     sh "sudo docker-compose up"
     echo "Application started on port: 8888 (http)"
 }
